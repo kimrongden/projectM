@@ -1,0 +1,100 @@
+ @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+ @import "node_modules/font-awesome/scss/font-awesome";
+ @import "partials/_variables";
+ @import "mixins";
+ @import "partials/_utilities";
+
+ .header-block
+ {
+   width: 100%;
+  margin: 0;
+  padding: 0px 10px 0px 10px;
+  background: $color-blue;
+  color: $color-white;
+  border:none;
+    @include has('items-collapse .navbar-toggle .icon-bar')
+    {
+     color: $color-white !important;
+      background: $color-white;
+    }
+    @include m(brand)
+    {
+     padding: 0;
+      display: flex;
+      align-items: center;
+      color: $color-white;
+    }
+   @include m('brand > *')
+   {
+     color: $color-white;
+   }
+   @include m('brand  img')
+   {
+     width: 40px;
+     margin-right: 10px;
+   }
+
+   @include  has('nav-items > a')
+   {
+     color: $color-white !important;
+   }
+    @include  has('nav-items a.dropdown-toggle')
+    {
+     color: $color-white !important;
+    }
+   @include  has('nav-items a.dropdown-toggle:focus')
+   {
+     color: $color-blue !important;
+     background: $color-white !important;
+   }
+   @include  has('nav-items .dropdown-menu li a')
+   {
+     margin-left: 5px;
+     margin-right: 5px;
+   }
+   @include  has('nav-items .dropdown-menu li a:hover')
+   {
+     color: $color-white !important;
+     background: $color-darkblue !important;
+     @include border-radius(2px);
+   }
+
+
+ }
+
+ @media screen and (max-width: 768px){
+   .header-block
+   {
+     @include  has('nav-items .open a')
+      {
+        color: $color-red !important;
+        background: $color-blue;
+      }
+     @include  has('nav-items a')
+     {
+       color: $color-white !important;
+     }
+     @include  m('nav-items:focus')
+     {
+       color: $color-blue !important;
+       background: $color-white !important;
+     }
+     @include  has('nav-items a.dropdown-toggle:focus')
+     {
+       color: $color-blue !important;
+       border-bottom:2px solid $color-darkblue;
+     }
+
+     @include  has('nav-items .dropdown-menu li a:hover')
+     {
+       color: $color-white !important;
+       background: $color-darkblue !important;
+       @include border-radius(2px)
+     }
+
+
+   }
+ }
+
+
+
